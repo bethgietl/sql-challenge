@@ -124,3 +124,9 @@ FROM employees
 GROUP BY last_name
 ORDER BY last_name DESC
 
+SELECT employees.emp_no, last_name, first_name, salaries.salary, titles.title
+FROM employees
+JOIN salaries
+ON employees.emp_no = salaries.emp_no 
+JOIN titles
+ON titles.title_id = employees.emp_title_id
